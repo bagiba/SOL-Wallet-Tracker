@@ -90,7 +90,6 @@ def webhook():
         tokenCA = data[0]['tokenTransfers'][1]['mint']
         wallet = data[0]['feePayer']
 
-        MC = get_marketcap(tokenCA)
         wallet_owner = wallet_owners.get(wallet, 'Unknown')
 
         desc_parts = desc.split(' ')
@@ -109,6 +108,7 @@ def webhook():
         # URL Discord Webhook
         webhook_url = 'https://discord.com/api/webhooks/1238150048915783691/yfSV1xGbsmb50JNNGW5-RCgMFf6e5E5S4wK7lfabMuAR5grnEJrmY9pHjghlHghB6_3n'
         if transaction_type == 'Buy':
+            MC = get_marketcap(tokenCA)
             message = {
         "content": None,
         "embeds": [
@@ -123,6 +123,7 @@ def webhook():
 
         else:
             tokenCA = data[0]['tokenTransfers'][0]['mint']
+            MC = get_marketcap(tokenCA)
             message = {
         "content": None,
         "embeds": [
