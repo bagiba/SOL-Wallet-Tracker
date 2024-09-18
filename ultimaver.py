@@ -106,7 +106,7 @@ def webhook():
 
 
         # URL Discord Webhook
-        webhook_url = 'https://discord.com/api/webhooks/1238150048915783691/yfSV1xGbsmb50JNNGW5-RCgMFf6e5E5S4wK7lfabMuAR5grnEJrmY9pHjghlHghB6_3n'
+        webhook_url = 'https://discord.com/api/webhooks/'
         if transaction_type == 'Buy':
             MC = get_marketcap(tokenCA)
             message = {
